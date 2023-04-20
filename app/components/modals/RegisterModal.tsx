@@ -44,7 +44,7 @@ const RegisterModal= () => {
 
     axios.post('/api/register', data)
     .then(() => {
-      toast.success('Registered!');
+      toast.success('User registration was successful!');
       registerModal.onClose();
       loginModal.onOpen();
     })
