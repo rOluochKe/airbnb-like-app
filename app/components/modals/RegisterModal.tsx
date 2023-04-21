@@ -6,8 +6,8 @@ import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 import { useCallback, useState } from "react";
 import { toast } from "react-hot-toast";
-import {
-  FieldValues,
+import { 
+  FieldValues, 
   SubmitHandler,
   useForm
 } from "react-hook-form";
@@ -25,8 +25,8 @@ const RegisterModal= () => {
   const loginModal = useLoginModal();
   const [isLoading, setIsLoading] = useState(false);
 
-  const {
-    register,
+  const { 
+    register, 
     handleSubmit,
     formState: {
       errors,
@@ -44,7 +44,7 @@ const RegisterModal= () => {
 
     axios.post('/api/register', data)
     .then(() => {
-      toast.success('User registration was successful!');
+      toast.success('Registered!');
       registerModal.onClose();
       loginModal.onOpen();
     })
@@ -98,32 +98,32 @@ const RegisterModal= () => {
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">
       <hr />
-      <Button
-        outline
+      <Button 
+        outline 
         label="Continue with Google"
         icon={FcGoogle}
-        onClick={() => signIn('google')}
+        onClick={() => signIn('google')} 
       />
-      <Button
-        outline
+      <Button 
+        outline 
         label="Continue with Github"
         icon={AiFillGithub}
         onClick={() => signIn('github')}
       />
-      <div
+      <div 
         className="
-          text-neutral-500
-          text-center
-          mt-4
+          text-neutral-500 
+          text-center 
+          mt-4 
           font-light
         "
       >
         <p>Already have an account?
-          <span
-            onClick={onToggle}
+          <span 
+            onClick={onToggle} 
             className="
               text-neutral-800
-              cursor-pointer
+              cursor-pointer 
               hover:underline
             "
             > Log in</span>

@@ -6,10 +6,10 @@ import { useCallback, useMemo } from "react";
 import { format } from 'date-fns';
 
 import useCountries from "@/app/hooks/useCountries";
-import {
-  SafeListing,
-  SafeReservation,
-  SafeUser
+import { 
+  SafeListing, 
+  SafeReservation, 
+  SafeUser 
 } from "@/app/types";
 
 import HeartButton from "../HeartButton";
@@ -63,7 +63,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
     if (!reservation) {
       return null;
     }
-
+  
     const start = new Date(reservation.startDate);
     const end = new Date(reservation.endDate);
 
@@ -71,27 +71,27 @@ const ListingCard: React.FC<ListingCardProps> = ({
   }, [reservation]);
 
   return (
-    <div
-      onClick={() => router.push(`/listings/${data.id}`)}
+    <div 
+      onClick={() => router.push(`/listings/${data.id}`)} 
       className="col-span-1 cursor-pointer group"
     >
       <div className="flex flex-col gap-2 w-full">
-        <div
+        <div 
           className="
-            aspect-square
-            w-full
-            relative
-            overflow-hidden
+            aspect-square 
+            w-full 
+            relative 
+            overflow-hidden 
             rounded-xl
           "
         >
           <Image
             fill
             className="
-              object-cover
-              h-full
-              w-full
-              group-hover:scale-110
+              object-cover 
+              h-full 
+              w-full 
+              group-hover:scale-110 
               transition
             "
             src={data.imageSrc}
@@ -102,8 +102,8 @@ const ListingCard: React.FC<ListingCardProps> = ({
             top-3
             right-3
           ">
-            <HeartButton
-              listingId={data.id}
+            <HeartButton 
+              listingId={data.id} 
               currentUser={currentUser}
             />
           </div>
@@ -126,7 +126,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
           <Button
             disabled={disabled}
             small
-            label={actionLabel}
+            label={actionLabel} 
             onClick={handleCancel}
           />
         )}
@@ -134,5 +134,5 @@ const ListingCard: React.FC<ListingCardProps> = ({
     </div>
    );
 }
-
+ 
 export default ListingCard;

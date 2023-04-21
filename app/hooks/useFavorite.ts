@@ -45,11 +45,11 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
     } catch (error) {
       toast.error('Something went wrong.');
     }
-  },
+  }, 
   [
-    currentUser,
-    hasFavorited,
-    listingId,
+    currentUser, 
+    hasFavorited, 
+    listingId, 
     loginModal,
     router
   ]);

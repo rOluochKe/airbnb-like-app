@@ -23,7 +23,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
 }) => {
   const { getAll } = useCountries();
 
-  return (
+  return ( 
     <div>
       <Select
         placeholder="Anywhere"
@@ -61,5 +61,5 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
     </div>
    );
 }
-
+ 
 export default CountrySelect;

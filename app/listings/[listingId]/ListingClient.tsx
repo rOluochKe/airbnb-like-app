@@ -11,7 +11,7 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 
 import Container from "@/app/components/Container";
-import { categories } from "@/app/components/CategoryList";
+import { categories } from "@/app/components/navbar/Categories";
 import ListingHead from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
 import ListingReservation from "@/app/components/listings/ListingReservation";
@@ -54,7 +54,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
   }, [reservations]);
 
   const category = useMemo(() => {
-     return categories.find((items) =>
+     return categories.find((items) => 
       items.label === listing.category);
   }, [listing.category]);
 
@@ -87,8 +87,8 @@ const ListingClient: React.FC<ListingClientProps> = ({
       })
   },
   [
-    totalPrice,
-    dateRange,
+    totalPrice, 
+    dateRange, 
     listing?.id,
     router,
     currentUser,
@@ -98,10 +98,10 @@ const ListingClient: React.FC<ListingClientProps> = ({
   useEffect(() => {
     if (dateRange.startDate && dateRange.endDate) {
       const dayCount = differenceInDays(
-        dateRange.endDate,
+        dateRange.endDate, 
         dateRange.startDate
       );
-
+      
       if (dayCount && listing.price) {
         setTotalPrice(dayCount * listing.price);
       } else {
@@ -110,11 +110,11 @@ const ListingClient: React.FC<ListingClientProps> = ({
     }
   }, [dateRange, listing.price]);
 
-  return (
+  return ( 
     <Container>
-      <div
+      <div 
         className="
-          max-w-screen-lg
+          max-w-screen-lg 
           mx-auto
         "
       >
@@ -126,12 +126,12 @@ const ListingClient: React.FC<ListingClientProps> = ({
             id={listing.id}
             currentUser={currentUser}
           />
-          <div
+          <div 
             className="
-              grid
-              grid-cols-1
-              md:grid-cols-7
-              md:gap-10
+              grid 
+              grid-cols-1 
+              md:grid-cols-7 
+              md:gap-10 
               mt-6
             "
           >
@@ -144,11 +144,11 @@ const ListingClient: React.FC<ListingClientProps> = ({
               bathroomCount={listing.bathroomCount}
               locationValue={listing.locationValue}
             />
-            <div
+            <div 
               className="
-                order-first
-                mb-10
-                md:order-last
+                order-first 
+                mb-10 
+                md:order-last 
                 md:col-span-3
               "
             >
@@ -168,5 +168,5 @@ const ListingClient: React.FC<ListingClientProps> = ({
     </Container>
    );
 }
-
+ 
 export default ListingClient;

@@ -13,7 +13,7 @@ export default async function getReservations(
     const { listingId, userId, authorId } = params;
 
     const query: any = {};
-
+        
     if (listingId) {
       query.listingId = listingId;
     };

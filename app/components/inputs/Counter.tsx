@@ -28,7 +28,7 @@ const Counter: React.FC<CounterProps> = ({
     onChange(value - 1);
   }, [onChange, value]);
 
-  return (
+  return ( 
     <div className="flex flex-row items-center justify-between">
       <div className="flex flex-col">
         <div className="font-medium">{title}</div>
@@ -56,10 +56,10 @@ const Counter: React.FC<CounterProps> = ({
         >
           <AiOutlineMinus />
         </div>
-        <div
+        <div 
           className="
-            font-light
-            text-xl
+            font-light 
+            text-xl 
             text-neutral-600
           "
         >
@@ -88,5 +88,5 @@ const Counter: React.FC<CounterProps> = ({
     </div>
    );
 }
-
+ 
 export default Counter;

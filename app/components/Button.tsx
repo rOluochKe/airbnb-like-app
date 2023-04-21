@@ -11,15 +11,15 @@ interface ButtonProps {
   icon?: IconType;
 }
 
-const Button: React.FC<ButtonProps> = ({
-  label,
-  onClick,
-  disabled,
+const Button: React.FC<ButtonProps> = ({ 
+  label, 
+  onClick, 
+  disabled, 
   outline,
   small,
   icon: Icon,
 }) => {
-  return (
+  return ( 
     <button
       disabled={disabled}
       onClick={onClick}
@@ -54,5 +54,5 @@ const Button: React.FC<ButtonProps> = ({
     </button>
    );
 }
-
+ 
 export default Button;
